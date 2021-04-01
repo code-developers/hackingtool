@@ -25,3 +25,36 @@ from tools.webattack import WebAttackTools
 from tools.wireless_attack_tools import WirelessAttackTools
 from tools.wordlist_generator import WordlistGeneratorTools
 from tools.xss_attack import XSSAttackTools
+
+logo = """\033[33m
+   ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
+  ███    ███     ███    ███ ███    ███   ███ ▄███▀ ███  ███▀▀▀██▄   ███    ███      ▀█████████▄ ███    ███ ███    ███ ███       
+  ███    ███     ███    ███ ███    █▀    ███▐██▀   ███▌ ███   ███   ███    █▀          ▀███▀▀██ ███    ███ ███    ███ ███       
+ ▄███▄▄▄▄███▄▄   ███    ███ ███         ▄█████▀    ███▌ ███   ███  ▄███                 ███   ▀ ███    ███ ███    ███ ███       
+▀▀███▀▀▀▀███▀  ▀███████████ ███        ▀▀█████▄    ███▌ ███   ███ ▀▀███ ████▄           ███     ███    ███ ███    ███ ███       
+  ███    ███     ███    ███ ███    █▄    ███▐██▄   ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███       
+  ███    ███     ███    ███ ███    ███   ███ ▀███▄ ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███▌    ▄ 
+  ███    █▀      ███    █▀  ████████▀    ███   ▀█▀ █▀    ▀█   █▀    ████████▀          ▄████▀    ▀██████▀   ▀██████▀  █████▄▄██ 
+                                         ▀                                                                            ▀                             
+\033[97m """
+
+all_tools = [
+    AnonSurfTools(),
+    InformationGatheringTools(),
+    WordlistGeneratorTools(),
+    WirelessAttackTools(),
+    SqlInjectionTools(),
+    PhishingAttackTools(),
+    WebAttackTools(),
+    PostExploitationTools(),
+    ForensicTools(),
+    PayloadCreatorTools(),
+    ExploitFrameworkTools(),
+    ReverseEngineeringTools(),
+    DDOSTools(),
+    RemoteAdministrationTools(),
+    XSSAttackTools(),
+    SteganographyTools(),
+    OtherTools(),
+    ToolManager()
+]
