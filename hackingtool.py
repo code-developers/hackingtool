@@ -58,3 +58,62 @@ all_tools = [
     OtherTools(),
     ToolManager()
 ]
+
+class AllTools(HackingToolsCollection):
+    TITLE = "All Tools"
+    TOOLS = all_tools
+
+    def show_info(self):
+        print(logo + '\033[0m \033[97m')
+
+
+if __name__ == "__main__":
+    try:
+        if system() == 'Linux':
+            fpath = "/home/hackingtoolpath.txt"
+            if not os.path.exists(fpath):
+                os.system('clear')
+                # run.menu()
+                print("""
+                        [@] Set Path (All your tools will be installed in that directory)
+                        [1] Manual 
+                        [2] Default
+                """)
+                choice = input("Z4nzu =>> ")
+
+                if choice == "1":
+                    inpath = input("Enter Path (with Directory Name) >> ")
+                    with open(fpath, "w") as f:
+                        f.write(inpath)
+                    print(f"Successfully Set Path to: {inpath}")
+                elif choice == "2":
+                    autopath = "/home/hackingtool/"
+                    with open(fpath, "w") as f:
+                        f.write(autopath)
+                    print(f"Your Default Path Is: {autopath}")
+                    sleep(3)
+                else:
+                    print("Try Again..!!")
+                    exit(0)
+
+            with open(fpath) as f:
+                archive = f.readline()
+                if not os.path.exists(archive):
+                    os.mkdir(archive)
+                os.chdir(archive)
+                all_tools = AllTools()
+                all_tools.show_options()
+
+        # If not Linux and probably Windows
+        elif system() == "Windows":
+            print(
+                "\033[91m Please Run This Tool On A Debian System For Best Results " "\e[00m")
+            sleep(2)
+            webbrowser.open_new_tab("https://tinyurl.com/y522modc")
+
+        else:
+            print("Please Check Your System or Open New Issue ...")
+
+    except KeyboardInterrupt:
+        print("\nExiting ..!!!")
+        sleep(2)
